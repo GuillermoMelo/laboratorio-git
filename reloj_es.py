@@ -1,12 +1,8 @@
 from datetime import datetime, timedelta
 
-horario=input("ingrese horario: ")
-horas=0
+from text_to_speach import hablar
 
-if horario == "":
-     horas=datetime.now()
-else:
-    horas=datetime.strptime(horario,"%H.%M.%S")
+horas=datetime.now()
 
 hora=horas.hour
 minutos=horas.minute
@@ -39,7 +35,7 @@ elif minutos in range (51,55):
 elif minutos in range (56,59):
     hora=horas+timedelta(hours=1)
     minutos=("en punto")
-hora=hora.hour
+hora=horas.hour
 if hora==1:
     hora=("una")
 elif hora==2:
@@ -89,4 +85,4 @@ elif hora==23:
 elif hora==24:
     hora=("veinti cuatro")
 
-print(f"la hora es:{hora} {minutos}")
+hablar(f"la hora es:{hora} {minutos}")
