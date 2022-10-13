@@ -1,12 +1,6 @@
 from datetime import datetime, timedelta
 
-horario=input("ingrese horario: ")
-horas=0
-
-if horario == "":
-     horas=datetime.now()
-else:
-    horas=datetime.strptime(horario,"%H.%M.%S")
+horas=datetime.now()
 
 hora=horas.hour
 minutos=horas.minute
